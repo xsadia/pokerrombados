@@ -3,7 +3,7 @@ import { db } from "../helpers/db";
 
 export async function GET() {
   const today = new Date();
-  today.setUTCHours(0, 0, 0, 0);
+  today.setHours(today.getHours() - 4);
   const top3 = await db.voteModel.aggregate([
     {
       $match: {
@@ -42,8 +42,6 @@ export async function GET() {
       $limit: 3,
     },
   ]);
-
-  console.log("----->", top3, today);
 
   return NextResponse.json(top3, { status: 200 });
 }

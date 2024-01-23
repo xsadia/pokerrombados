@@ -41,6 +41,9 @@ export default async function Results() {
       <p className="text-2xl font-bold text-yellow-500">
         1º Lugar ({first.name})
       </p>
+      <span className="text-2xl font-bold text-yellow-500">
+        {first.voteCount} votos
+      </span>
 
       <div className="relative bg-gray-400 py-6 px-4 rounded-lg w-24 h-24">
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-white rounded-full overflow-hidden">
@@ -54,6 +57,7 @@ export default async function Results() {
         </div>
       </div>
       <p className="text-lg text-gray-800">2º Lugar ({second.name})</p>
+      <span className="text-lg text-gray-800">{second.voteCount} votos</span>
 
       <div className="relative bg-orange-400 py-4 px-3 rounded-lg w-20 h-20">
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-white rounded-full overflow-hidden">
@@ -67,6 +71,7 @@ export default async function Results() {
         </div>
       </div>
       <p className="text-base text-orange-500">3º Lugar ({third.name})</p>
+      <span className="text-base text-orange-500">{third.voteCount} votos</span>
     </div>
   );
 }
