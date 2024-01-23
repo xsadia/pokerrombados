@@ -7,7 +7,7 @@ export async function GET() {
   const top3 = await db.voteModel.aggregate([
     {
       $match: {
-        createdAt: { $gte: today.toISOString() },
+        createdAt: { $gte: today },
       },
     },
     {
@@ -42,6 +42,8 @@ export async function GET() {
       $limit: 3,
     },
   ]);
+
+  console.log("----->", top3, today);
 
   return NextResponse.json(top3, { status: 200 });
 }
