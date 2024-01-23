@@ -13,7 +13,7 @@ const getPokemon = async (id: number) => {
     throw new Error("Missing DB URL");
   }
 
-  const conn = await connect(args[0]);
+  await connect(args[0]);
 
   const caught = [];
   for (let i = 1; i <= 420; i++) {

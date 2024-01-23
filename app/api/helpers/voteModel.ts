@@ -1,6 +1,9 @@
 import mongoose, { Schema, Types } from "mongoose";
 
-mongoose.connect(process.env.DATABASE_URL! || "mongodb://localhost:27017/poke");
+mongoose.connect(
+  process.env.DATABASE_URL! ||
+    "mongodb+srv://fezin:Lua2711feka@arrombs.ublijke.mongodb.net/poke?retryWrites=true&w=majority"
+);
 mongoose.Promise = global.Promise;
 
 export const voteModel = () => {

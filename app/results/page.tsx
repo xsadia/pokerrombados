@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getLeaderBoard = async () => {
-  const response = await fetch("http://localhost:3000/api/votes", {
+  const response = await fetch(`${process.env.API_URL}/api/votes`, {
     cache: "no-store",
   });
 

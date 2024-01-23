@@ -17,7 +17,7 @@ export const Card = ({
 }) => {
   const handleVote = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/api", {
+    const response = await fetch(`${process.env.API_URL}/api`, {
       method: "POST",
       body: JSON.stringify({
         votedFor: _id,
