@@ -4,7 +4,15 @@ import { revalidatePath } from "next/cache";
 
 export async function GET() {
   revalidatePath("/api/votes");
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
+
   const top3 = await db.voteModel.aggregate([
+    {
+      $match: {
+        createdAt: { $gte: today },
+      },
+    },
     {
       $group: {
         _id: "$votedFor",
