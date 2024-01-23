@@ -2,7 +2,7 @@ import { Card } from "./components/Card";
 import { Toaster } from "react-hot-toast";
 
 const getContestants = async () => {
-  const response = await fetch(`${process.env.VERCEL_URL}/api`, {
+  const response = await fetch(`${process.env.API_URL}/api`, {
     cache: "no-store",
   });
 

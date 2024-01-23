@@ -8,13 +8,6 @@ const getPokemon = async (id: number) => {
 };
 
 (async () => {
-  const args = process.argv.slice(2);
-  if (args.length < 1) {
-    throw new Error("Missing DB URL");
-  }
-
-  await connect(args[0]);
-
   const caught = [];
   for (let i = 1; i <= 420; i++) {
     const pokemon = await getPokemon(i);
