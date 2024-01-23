@@ -16,7 +16,7 @@ const getPokemon = async (id: number) => {
   const conn = await connect(args[0]);
 
   const caught = [];
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 420; i++) {
     const pokemon = await getPokemon(i);
     console.log("got: ", pokemon);
     caught.push(pokemon);

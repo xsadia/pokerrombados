@@ -3,7 +3,7 @@ import { db } from "./helpers/db";
 import { Types } from "mongoose";
 
 const getId = (id?: number): number => {
-  const pokeId = Math.floor(Math.random() * 10) + 1;
+  const pokeId = Math.floor(Math.random() * 420) + 1;
   if (id === pokeId) {
     return getId(id);
   }
