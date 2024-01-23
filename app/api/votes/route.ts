@@ -7,7 +7,7 @@ export async function GET() {
   const top3 = await db.voteModel.aggregate([
     {
       $match: {
-        createdAt: { $gte: today },
+        createdAt: { $gte: today.toISOString() },
       },
     },
     {
