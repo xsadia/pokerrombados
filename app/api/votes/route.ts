@@ -2,14 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "../helpers/db";
 
 export async function GET() {
-  const today = new Date();
-  today.setHours(today.getHours() - 4);
   const top3 = await db.voteModel.aggregate([
-    {
-      $match: {
-        createdAt: { $gte: today },
-      },
-    },
     {
       $group: {
         _id: "$votedFor",
