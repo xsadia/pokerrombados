@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { db } from "../helpers/db";
+import { revalidatePath } from "next/cache";
 
 export async function GET() {
+  revalidatePath("/api/votes");
   const top3 = await db.voteModel.aggregate([
     {
       $group: {
